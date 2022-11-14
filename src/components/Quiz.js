@@ -18,23 +18,25 @@ export default function Quiz() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(result);
+    // console.log(result);
   });
 
   /** next button event handler */
   function onNext() {
-    console.log("On next click");
     if (trace < count) {
       /**increment trace value by one */
       dispatch(MoveNextQuestion());
-      dispatch(PushAnswer(check));
 
+      /** changing previous option */
+      if(result.length <= trace){
+        dispatch(PushAnswer(check));
+      }
+      
     }
   }
 
   /** previous button event handler */
   function onPrev() {
-    console.log("On prev click");
     if (trace > 0) {
       /**decrement trace value by 1 */
       dispatch(MovePrevQuestion());
@@ -54,12 +56,13 @@ export default function Quiz() {
       {/** display questions */}
       <Questions onChecked={onChecked}/>
       <div className="grid">
-        <button className="btn prev" onClick={onPrev}>
-          Prev
-        </button>
-        <button className="btn next" onClick={onNext}>
+        { trace > 0 ?  <button className="btn prev" onClick={onPrev}> Prev</button> : <></> }
+       
+        { trace == count - 1 ? <button className="btn next" onClick={onNext}>
+          Finish
+        </button> : <button className="btn next" onClick={onNext}>
           Next
-        </button>
+        </button>}
       </div>
     </div>
   );
