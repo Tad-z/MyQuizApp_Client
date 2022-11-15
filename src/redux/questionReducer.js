@@ -14,9 +14,11 @@ export const questionReducer = createSlice({
         /** state is the current state */
         /** action to access the values of the user input */
         startExamAction: (state, action) => {
+            let { question , answers } = action.payload
             return {
                 ...state,
-                queue : action.payload
+                queue : question,
+                answers
             }
         },
         moveNextAction: (state) => {

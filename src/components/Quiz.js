@@ -5,8 +5,10 @@ import { MoveNextQuestion, MovePrevQuestion } from "../hooks/FetchQuestion";
 import { PushAnswer } from "../hooks/setResult";
 import { Navigate } from "react-router-dom";
 
+
 /** redux store import */
 import { useSelector, useDispatch } from "react-redux";
+
 
 export default function Quiz() {
 
@@ -17,9 +19,6 @@ export default function Quiz() {
   const count = useSelector((state) => state.questions.queue.length);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // console.log(result);
-  });
 
   /** next button event handler */
   function onNext() {
@@ -33,6 +32,8 @@ export default function Quiz() {
       }
       
     }
+    /** when someone doesnt answer a question, his answer should be undefined */
+    setChecked(undefined)
   }
 
   /** previous button event handler */
