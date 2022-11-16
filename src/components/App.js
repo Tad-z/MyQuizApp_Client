@@ -1,33 +1,42 @@
-import '../styles/App.css';
+import "../styles/App.css";
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 /**import components */
-import Main from './Main';
-import Quiz from './Quiz';
-import Result from './Result';
+import Main from "./Main";
+import Quiz from "./Quiz";
+import Result from "./Result";
+import { UserAuth } from "../helper/helper";
 
 /** react routes */
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Main></Main>
+    path: "/",
+    element: <Main></Main>,
   },
   {
-    path: '/quiz',
-    element: <Quiz></Quiz>
+    path: "/quiz",
+    element: (
+      <UserAuth>
+        <Quiz />
+      </UserAuth>
+    ),
   },
   {
-    path: '/result',
-    element: <Result></Result>
+    path: "/result",
+    element: (
+      <UserAuth>
+        <Result />,
+      </UserAuth>
+    ),
   },
-])
+]);
 
 function App() {
   return (
-   <>
+    <>
       <RouterProvider router={router} />
-   </>
+    </>
   );
 }
 

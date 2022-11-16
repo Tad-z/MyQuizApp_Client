@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+
 export function attempts_Number(result) {
   return result.filter((r) => r != undefined).length;
 }
@@ -12,4 +15,10 @@ export function earnedPoints_Number(result, answers, pointsPerQuestion) {
 
 export function resultStatus(totalPoints, earnedPoints) {
     return (totalPoints * 50/100) < earnedPoints /** if 50% of total points is less than earned points */
+}
+
+/** Auth */
+export function UserAuth({ children }) {
+  const auth = useSelector(state => state.result.userId)
+  return auth ? children : <Navigate to={'/'} replace={true}></Navigate>
 }
