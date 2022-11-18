@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import data, { answers } from "../database/data";
+import { getServerData, mappedAnswers } from "../helper/helper";
 
 /** redux actions */
 import * as Action from "../redux/questionReducer";
@@ -19,15 +19,18 @@ export const useFetchQuestion = () => {
 
     /** async function fetch backend data */
     (async () => {
+      const { data } = await getServerData(
+        `${process.env.REACT_APP_SERVER_HOSTNAME}questions`
+      );
+      let questions = data.questions;
+      const answers = mappedAnswers(questions);
       try {
-        let question = data;
-
-        if (question.length > 0) {
+        if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));
-          setGetData((prev) => ({ ...prev, apiData: {question, answers} }));
+          setGetData((prev) => ({ ...prev, apiData: { questions, answers } }));
 
           /** dispatch an action */
-          dispatch(Action.startExamAction({question, answers}));
+          dispatch(Action.startExamAction({ question: questions, answers }));
         } else {
           throw new Error("No Question Avalibale");
         }
@@ -62,4 +65,3 @@ export const MovePrevQuestion = () => async (dispatch) => {
     console.log(err);
   }
 };
-
