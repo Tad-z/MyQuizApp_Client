@@ -44,6 +44,7 @@ export default function Quiz() {
     }
   }
   function onChecked(check) {
+    console.log(check);
     setChecked(check);
   }
   /** finished exam */
@@ -55,7 +56,7 @@ export default function Quiz() {
       <h1 className="title text-light">Quiz Application</h1>
 
       {/** display questions */}
-      <Questions onChecked={onChecked}/>
+      <Questions onChecked={onChecked} />
       <div className="grid">
         { trace > 0 ?  <button className="btn prev" onClick={onPrev}> Prev</button> : <></> }
        

@@ -19,8 +19,8 @@ export default function Main() {
       <h1 className="title text-light">Quiz Application</h1>
 
       <ol>
-        <li>You will be asked 10 questions one after another</li>
-        <li>10 points will be awarded for the correct answer</li>
+        <li>You will be asked some questions one after another</li>
+        <li>Points will be awarded for the correct answer</li>
         <li>Each question has three options. You can choose only one option</li>
         <li>You can review and change answers before the end of the quiz</li>
         <li>The result will be declared at the end of the quiz</li>

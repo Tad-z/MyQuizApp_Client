@@ -21,27 +21,27 @@ export default [
         id: 3,
         question : "When an operator value is NULL, the typeof returned by the unary operator is:",
         options : [
-            'Boolean',
-            'Undefined',
-            'Object',
+            "Boolean",
+            "Undefined",
+            "Object",
         ]
     },
     {
         id: 4,
         question : "What does the toString() method return?",
         options : [
-            'Return Object',
-            'Return String',
-            'Return Integer'
+            "Return Object",
+            "Return String",
+            "Return Integer"
         ]
     },
     {
         id: 5,
         question : "Which function is used to serialize an object into a JSON string?",
         options : [
-            'stringify()',
-            'parse()',
-            'convert()',
+            "stringify()",
+            "parse()",
+            "convert()",
         ]
     }
 ]

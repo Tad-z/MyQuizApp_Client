@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import data from "../database/data";
 
 /** Custom Hook */
 import { useFetchQuestion } from "../hooks/FetchQuestion";
@@ -9,10 +8,10 @@ import { UpdateAnswer } from "../hooks/setResult";
 
 export default function Questions({ onChecked }) {
   const [checked, setChecked] = useState(undefined);
-  const { trace } = useSelector((state) => state.questions);
+  const trace = useSelector((state) => state.questions.trace);
   // useSelector(state => console.log(state));
   const result = useSelector((state) => state.result.result);
-  const [{ isLoading, apiData, serverError }] = useFetchQuestion();
+  const [{ isLoading, serverError }] = useFetchQuestion();
 
   const questions = useSelector(
     (state) => state.questions.queue[state.questions.trace]
@@ -21,6 +20,8 @@ export default function Questions({ onChecked }) {
 
   useEffect(() => {
     dispatch(UpdateAnswer({ trace, checked }));
+    console.log(questions);
+
   }, [checked]);
 
   function onSelect(i) {
@@ -37,8 +38,8 @@ export default function Questions({ onChecked }) {
     <div className="questions">
       <h2 className="text-light">{questions?.question}</h2>
 
-      <ul key={questions?.id}>
-        {questions?.options.map((q, i) => (
+      <ul key={questions?._id}>
+        {questions?.option.map((q, i) => (
           <li key={i}>
             <input
               type="radio"
