@@ -9,6 +9,7 @@
     padding-top: 2em;
 }
 
+
 .start .btn{
     padding: .2em 1.7em;
     border: none;
@@ -17,6 +18,10 @@
     color: #202020;
     text-decoration: none;
     background-color: #faff5a;
+}
+
+.start .btn:hover{
+    background-color: #969937;
 }
 
 #form{

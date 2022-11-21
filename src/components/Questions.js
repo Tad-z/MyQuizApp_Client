@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { ColorRing } from "react-loader-spinner";
 
 /** Custom Hook */
 import { useFetchQuestion } from "../hooks/FetchQuestion";
 import { UpdateAnswer } from "../hooks/setResult";
-
 
 export default function Questions({ onChecked }) {
   const [checked, setChecked] = useState(undefined);
@@ -21,7 +21,6 @@ export default function Questions({ onChecked }) {
   useEffect(() => {
     dispatch(UpdateAnswer({ trace, checked }));
     console.log(questions);
-
   }, [checked]);
 
   function onSelect(i) {
@@ -30,7 +29,21 @@ export default function Questions({ onChecked }) {
     dispatch(UpdateAnswer({ trace, checked }));
   }
 
-  if (isLoading) return <h3 className="text-light">isLoading</h3>;
+  if (isLoading)
+    return (
+      <div className="loader">
+        <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+        />
+      </div>
+    );
+
   if (serverError)
     return <h3 className="text-light">{serverError || "Unknown Error"}</h3>;
 
@@ -54,7 +67,9 @@ export default function Questions({ onChecked }) {
             <label className="text-primary" htmlFor={`q${i}-option`}>
               {q}
             </label>
-            <div className={`check ${result[trace] == i ? 'checked' : ''}`}></div>
+            <div
+              className={`check ${result[trace] == i ? "checked" : ""}`}
+            ></div>
           </li>
         ))}
       </ul>
