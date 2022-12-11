@@ -7,12 +7,12 @@ export default function ResultTable() {
   useEffect(() => {
     (async () => {
       const { data } = await getServerData(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}result`
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/result`
       );
       let res = data.results;
       setResults(res);
     })();
-    console.log(results);
+    console.log("r",results);
   });
 
   return (

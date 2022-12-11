@@ -23,6 +23,7 @@ export default function Main() {
         <li>Points will be awarded for the correct answer</li>
         <li>Each question has three options. You can choose only one option</li>
         <li>You can review and change answers before the end of the quiz</li>
+        <li>Be conscious of time, there is a timer at the top left</li>
         <li>The result will be declared at the end of the quiz</li>
       </ol>
 

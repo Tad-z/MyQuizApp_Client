@@ -20,8 +20,9 @@ export const useFetchQuestion = () => {
     /** async function fetch backend data */
     (async () => {
       const { data } = await getServerData(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}questions`
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/questions`
       );
+      console.log(data.questions);
       let questions = data.questions;
       const answers = mappedAnswers(questions);
       try {

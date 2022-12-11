@@ -4,6 +4,7 @@
   --primary-color: #0dff92;
   --dark-color: #222222;
   --light-color: #f0f0f0;
+  --danger-color: rgb(233, 3, 3);
 }
 
 body,
@@ -35,6 +36,10 @@ html {
 
 .text-light {
   color: var(--light-color);
+}
+
+.text-danger {
+  color: var(--danger-color);
 }
 
 .container ul {
@@ -91,6 +96,7 @@ html {
 .next:hover {
   background-color: #057241
 }
+
 
 .prev {
   background-color: #faff5a;

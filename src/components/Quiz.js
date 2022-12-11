@@ -1,27 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Questions from "./Questions";
+import QuizTimer from "./QuizTimer";
 
 import { MoveNextQuestion, MovePrevQuestion } from "../hooks/FetchQuestion";
 import { PushAnswer } from "../hooks/setResult";
 import { Navigate } from "react-router-dom";
 
-
 /** redux store import */
 import { useSelector, useDispatch } from "react-redux";
+
 
 
 export default function Quiz() {
 
   const [check, setChecked] = useState(undefined);
+  const [timeRemaining, setTimeRemaining] = useState(100);
 
   const result = useSelector(state => state.result.result) 
   const trace = useSelector((state) => state.questions.trace);
   const count = useSelector((state) => state.questions.queue.length);
   const dispatch = useDispatch();
 
-
+  function onTimeRemaining(time) {
+    setTimeRemaining(time)
+    console.log("t",timeRemaining);
+  }
   /** next button event handler */
   function onNext() {
+    
     if (trace < count) {
       /**increment trace value by one */
       dispatch(MoveNextQuestion());
@@ -48,11 +54,12 @@ export default function Quiz() {
     setChecked(check);
   }
   /** finished exam */
-  if (result.length && result.length >= count) {
+  if (result.length && result.length >= count || timeRemaining == 0) {
     return <Navigate to={"/result"} replace="true"></Navigate>
   }
   return (
     <div className="container">
+      <QuizTimer onTimeRemaining={onTimeRemaining} />
       <h1 className="title text-light">Quiz Application</h1>
 
       {/** display questions */}
