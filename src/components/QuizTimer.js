@@ -11,10 +11,19 @@ export default function QuizTimer({ onTimeRemaining }) {
     return () => clearInterval(timer);
   }, [timeRemaining]);
 
-  onTimeRemaining(timeRemaining);
+  const updateTime = (timeRemaining) => {
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+    return `${minutes}:${seconds}`;
+  };
 
-  return  <p className={timeRemaining > 30 ? "text-light" : "text-danger"}>Time Remaning: {timeRemaining} seconds</p> 
-    //   <p className="text-danger">Time Remaning: {timeRemaining} seconds</p>}
-   
-  
+  const time = updateTime(timeRemaining);
+  onTimeRemaining(time);
+
+  return (
+    <p className={timeRemaining > 30 ? "text-light" : "text-danger"}>
+      Time Remaning: {time}
+    </p>
+  );
+  //   <p className="text-danger">Time Remaning: {timeRemaining} seconds</p>}
 }

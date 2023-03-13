@@ -20,7 +20,7 @@ export const useFetchQuestion = () => {
     /** async function fetch backend data */
     (async () => {
       const { data } = await getServerData(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/questions`
+        `https://https-quiz-app-server-onrender-com.onrender.com/questions`
       );
       console.log(data.questions);
       let questions = data.questions;

@@ -23,7 +23,7 @@ export const usePostResult = (resultData) => {
     (async () => {
         try{
             if(result == [] && !username) throw new Error("Could not get result");
-            await postServerData(`${process.env.REACT_APP_SERVER_HOSTNAME}/result`, resultData, data => data)
+            await postServerData(`https://https-quiz-app-server-onrender-com.onrender.com/result`, resultData, data => data)
         }catch (err) {
             console.log(err.message);
         }
