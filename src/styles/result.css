@@ -30,14 +30,15 @@
 table {
     width: 100%;
     margin-bottom: 35px;
-    
+    padding: 10px;
     /* border-collapse: collapse; */
 }
 .table-container {
     display: flex;
     justify-content: center;
-    width: 70%;
+    width: 100%;
     gap: 1em;
+    padding: 10px;
 }
 
 .table-header {
