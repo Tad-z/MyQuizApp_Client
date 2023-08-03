@@ -53,7 +53,7 @@ export default function Quiz() {
   
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz Application</h1>
+      <h1 className="title primary-color">Quiz Application</h1>
 
       {/** display questions */}
       <Questions onChecked={onChecked} />

@@ -1,28 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700&family=Rubik:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #0dff92;
-  --dark-color: #222222;
-  --light-color: #f0f0f0;
+  --primary-color: #403d3a;
+  --dark-color: #333;
+  --light-color: #474746;
   --danger-color: rgb(233, 3, 3);
 }
 
 body,
 html {
-  height: 100vh;
-  background: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 64));
+  height: 100%;
+  background: linear-gradient(to right, #edede9, #d6ccc2);
+  overflow-x: hidden;
 }
 
 * > * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   margin: 40px auto;
-  height: auto;
-  width: 800px;
+  height: 100vh;
+  max-width: 1300px;
   padding: 20px;
 }
 
@@ -37,7 +40,12 @@ html {
 .text-light {
   color: var(--light-color);
 }
-
+.primary-color {
+  color: var(--primary-color);
+}
+.text-dark {
+  color: var(--dark-color);
+}
 .text-danger {
   color: var(--danger-color);
 }
@@ -51,6 +59,7 @@ html {
 
 .container .questions {
   padding: 3em;
+  align-self: stretch;
 }
 
 /* 
@@ -69,6 +78,7 @@ html {
 
 .container .btn {
   padding: 0.2em 1.7em;
+  margin: 0 30px 30px 30px;
   border: none;
   border-radius: 0.1em;
   font-size: 1.2em;
@@ -77,7 +87,7 @@ html {
 .container .btn:hover {
   cursor: pointer;
   /* background-color: #f0f0f0; */
-  color: #202020;
+  /* color: #202020; */
 }
 
 .loader {
@@ -91,22 +101,26 @@ html {
 
 .next {
   background-color: var(--primary-color);
+  color: white;
   justify-self: flex-end;
 }
 .next:hover {
-  background-color: #057241
+  background-color: #2b2927;
+  color: white;
 }
 
 
 .prev {
-  background-color: #faff5a;
+  background-color: #d5bdaf;
+  color: white;
   justify-self: flex-start;
 }
 .prev:hover{
-  background-color: #898b33
+  background-color: #6b5f58;
+  color: white;
 }
 ul li {
-  color: #aaaaaa;
+  color: var(--dark-color);
   display: block;
   position: relative;
   float: left;
@@ -134,7 +148,7 @@ ul li label {
 }
 
 ul li:hover label {
-  color: #ffffff;
+  color: #7b7670;
 }
 
 ul li .check {
@@ -188,4 +202,10 @@ input[type="radio"]:checked ~ .text-primary {
 
 .checked::before {
   background: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .container .title {
+    font-size: 2.4em;
+  }
 }

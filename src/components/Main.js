@@ -16,7 +16,7 @@ export default function Main() {
 
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz Application</h1>
+      <h1 className="title primary-color">Quiz Application</h1>
 
       <ol>
         <li>You will be asked some questions one after another</li>

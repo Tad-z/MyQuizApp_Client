@@ -13,7 +13,8 @@ export default function QuizTimer({ onTimeRemaining }) {
 
   const updateTime = (timeRemaining) => {
     const minutes = Math.floor(timeRemaining / 60);
-    const seconds = timeRemaining % 60;
+    const secondss = timeRemaining % 60;
+    const seconds = secondss < 10 ? `0${secondss}` : secondss;
     return `${minutes}:${seconds}`;
   };
 

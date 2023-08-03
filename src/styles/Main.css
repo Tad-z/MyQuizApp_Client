@@ -1,6 +1,7 @@
 .container ol li{
+
     font-size: 1.4em;
-    color: #cecece;
+    color: #333;
 }
 
 .start{
@@ -15,19 +16,21 @@
     border: none;
     border-radius: .1em;
     font-size: 1.2em;
-    color: #202020;
+    color: white;
     text-decoration: none;
-    background-color: #faff5a;
+    background-color: #474746;
 }
 
 .start .btn:hover{
-    background-color: #969937;
+    background-color: #403d3a;
+    color: white;
 }
 
 #form{
     display: flex;
     justify-content: center;
-    margin-top: 4em;
+    width: 50%;
+    margin-top: 3em;
 }
 
 #form .userid{
@@ -36,4 +39,16 @@
     border: none;
     border-radius: 3px;
     font-size: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .container ol li {
+        font-size: 0.9em;
+    }
+    #form {
+        width: 80%;
+    }
+    #form .userid {
+        width: 80%;
+    }
 }
