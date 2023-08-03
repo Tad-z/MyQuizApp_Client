@@ -66,7 +66,7 @@ export default function Questions({ onChecked }) {
       <div className="questions">
         <h2 className="text-light">{questions?.question}</h2>
 
-        <ul key={questions?._id}>
+        <ul key={questions?._id} className="list">
           {questions?.option.map((q, i) => (
             <li key={i}>
               <input

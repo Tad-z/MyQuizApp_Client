@@ -47,7 +47,7 @@ export default function Result() {
   }
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz Appliction</h1>
+      <h1 className="title text-light">Quiz Application</h1>
 
       <div className="result flex-center">
         <div className="flex">
@@ -73,7 +73,7 @@ export default function Result() {
         <div className="flex">
           <span>Quiz Result</span>
           <span
-            style={{ color: `${status ? "#2aff95" : "#ff2a66"}` }}
+            style={{ color: `${status ? "#033e20" : "#ff2a66"}` }}
             className="bold"
           >
             {status ? "Passed" : "Failed"}
@@ -86,9 +86,9 @@ export default function Result() {
         </Link>
       </div>
 
-      <div className="container">
+      {/* <div className="container"> */}
         <ResultTable></ResultTable>
-      </div>
+      {/* </div> */}
     </div>
   );
 }

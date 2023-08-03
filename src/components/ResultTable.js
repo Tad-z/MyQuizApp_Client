@@ -7,7 +7,7 @@ export default function ResultTable() {
   useEffect(() => {
     (async () => {
       const { data } = await getServerData(
-        `${process.env.REACT_APP_SERVER_HOSTNAME}/result`
+        `https://https-quiz-app-server-onrender-com.onrender.com/result`
       );
       let res = data.results;
       setResults(res);
@@ -16,7 +16,7 @@ export default function ResultTable() {
   });
 
   return (
-    <div>
+    <div className="table-container">
       <table>
         <thead className="table-header">
           <tr className="table-row">
