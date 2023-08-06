@@ -26,6 +26,9 @@ export const useFetchQuestion = () => {
       let questions = data.questions;
       const answers = mappedAnswers(questions);
       try {
+        setTimeout(() => {
+          setGetData((prev) => ({ ...prev, isLoading: false }));
+        }, 3000);
         if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));
           setGetData((prev) => ({ ...prev, apiData: { questions, answers } }));
