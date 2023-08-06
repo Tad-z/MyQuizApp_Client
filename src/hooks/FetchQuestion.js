@@ -28,7 +28,7 @@ export const useFetchQuestion = () => {
       try {
         setTimeout(() => {
           setGetData((prev) => ({ ...prev, isLoading: false }));
-        }, 3000);
+        }, 1000);
         if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));
           setGetData((prev) => ({ ...prev, apiData: { questions, answers } }));
