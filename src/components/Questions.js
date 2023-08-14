@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { ColorRing } from "react-loader-spinner";
+import { PulseLoader } from "react-spinners";
 import QuizTimer from "./QuizTimer";
 
 /** Custom Hook */
@@ -45,14 +45,9 @@ export default function Questions({ onChecked }) {
   if (isLoading)
     return (
       <div className="loader">
-        <ColorRing
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-          colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+        <PulseLoader
+          loading={isLoading}
+          color="#403d3a"
         />
       </div>
     );
