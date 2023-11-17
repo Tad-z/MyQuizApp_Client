@@ -38,7 +38,7 @@ export default function Questions({ onChecked }) {
     dispatch(UpdateAnswer({ trace, checked }));
   }
   /** finished exam */
-  if ((result.length && result.length >= count) || (time == `0:0`)) {
+  if ((result.length && result.length >= count) || (time == `0:00`)) {
     return <Navigate to={"/result"} replace="true"></Navigate>
   }
 
