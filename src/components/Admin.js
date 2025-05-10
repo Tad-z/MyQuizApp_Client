@@ -1,7 +1,11 @@
-import React from 'react'
+import QuizForm from "./QuizForm";
+import "../styles/Admin.css"; // 👈 Make sure to import the CSS
 
-export default function Admin() {
+export default function AdminPage() {
   return (
-    <div>Admin</div>
-  )
+    <div className="admin-container">
+      <h2 className="admin-title">Create a New Quiz</h2>
+      <QuizForm />
+    </div>
+  );
 }

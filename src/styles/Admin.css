@@ -1,0 +1,94 @@
+/* Enhanced Admin.css */
+
+:root {
+  --admin-primary: #4361ee;
+  --admin-secondary: #3f37c9;
+  --admin-accent: #4895ef;
+  --admin-bg: #f8f9fa;
+  --admin-card: #ffffff;
+  --admin-text-primary: #212529;
+  --admin-text-secondary: #495057;
+  --admin-border: #dee2e6;
+  --admin-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --admin-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --admin-radius: 10px;
+  --admin-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: var(--admin-bg);
+  font-family: var(--admin-font);
+  color: var(--admin-text-primary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.admin-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--admin-text-primary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.admin-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--admin-primary);
+  border-radius: 2px;
+}
+
+/* Add subtle page background pattern */
+@media (min-width: 768px) {
+  body {
+    background-image: 
+      radial-gradient(circle at 25px 25px, rgba(67, 97, 238, 0.05) 2%, transparent 0%),
+      radial-gradient(circle at 75px 75px, rgba(67, 97, 238, 0.025) 2%, transparent 0%);
+    background-size: 100px 100px;
+    background-position: 0 0;
+  }
+  
+  .admin-container {
+    padding: 3.5rem 2rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-title {
+  animation: fadeInDown 0.5s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .admin-container {
+    padding: 2rem 1rem;
+  }
+  
+  .admin-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}

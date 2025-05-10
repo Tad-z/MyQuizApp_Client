@@ -1,0 +1,122 @@
+/* StartQuiz.css */
+
+.start-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  font-family: var(--admin-font);
+  color: var(--admin-text-primary);
+}
+
+.start-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--admin-text-primary);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  animation: fadeInDown 0.5s ease-out forwards;
+}
+
+.start-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--admin-primary);
+  border-radius: 2px;
+}
+
+.quiz-typee {
+  font-size: 1.25rem;
+  color: var(--admin-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.form-section {
+  background-color: var(--admin-card);
+  border-radius: var(--admin-radius);
+  box-shadow: var(--admin-shadow-sm);
+  padding: 2rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: var(--admin-primary);
+}
+
+.start-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: var(--admin-primary);
+  color: var(--admin-card);
+  border: none;
+  border-radius: var(--admin-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-button:disabled {
+  background-color: var(--admin-border);
+  cursor: not-allowed;
+}
+
+.start-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  color: var(--admin-text-secondary);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .quiz-container {
+    padding: 2rem 1rem;
+  }
+
+  .quiz-title {
+    font-size: 1.75rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  .input-field {
+    padding: 0.75rem;
+  }
+
+  .start-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,149 @@
+/* QuizResult.css */
+
+.result-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  font-family: var(--admin-font);
+  color: var(--admin-text-primary);
+  background-color: var(--admin-background);
+}
+
+.result-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--admin-text-primary);
+  padding-bottom: 0.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  animation: fadeInDown 0.5s ease-out forwards;
+}
+
+.result-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--admin-primary);
+  border-radius: 2px;
+}
+
+.result-box {
+  background-color: var(--admin-card);
+  border-radius: var(--admin-radius);
+  box-shadow: var(--admin-shadow-sm);
+  padding: 2rem;
+  margin: 1.5rem 0;
+}
+
+.result-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--admin-text-primary);
+  margin-bottom: 1rem;
+}
+
+.user-info {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: var(--admin-text-secondary);
+}
+
+.result-box p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--admin-text-secondary);
+}
+
+.blue-border {
+  border: 2px solid var(--admin-primary);
+}
+
+.green-border {
+  border: 2px solid var(--admin-success);
+}
+
+.no-result-text {
+  font-size: 1.5rem;
+  color: var(--admin-text-secondary);
+  text-align: center;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.home-button,
+.full-button {
+  padding: 1rem 2rem;
+  background-color: var(--admin-primary);
+  color: var(--admin-card);
+  font-size: 1.25rem;
+  border: none;
+  border-radius: var(--admin-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 2rem;
+}
+
+.home-button:hover,
+.full-button:hover {
+  background-color: var(--admin-hover);
+  transform: translateY(-3px);
+}
+
+.home-button:disabled,
+.full-button:disabled {
+  background-color: var(--admin-border);
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .result-container {
+    padding: 2rem 1rem;
+  }
+
+  .result-title {
+    font-size: 1.75rem;
+  }
+
+  .result-box {
+    padding: 1.5rem;
+  }
+
+  .result-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .user-info {
+    font-size: 1rem;
+  }
+
+  .home-button,
+  .full-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

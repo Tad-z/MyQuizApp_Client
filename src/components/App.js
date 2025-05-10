@@ -1,33 +1,35 @@
-import "../styles/App.css";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 /**import components */
-import Main from "./Main";
-import Quiz from "./Quiz";
-import Result from "./Result";
 import { UserAuth } from "../helper/helper";
+import AdminPage from "./Admin";
+import QuizList from "./QuizList";
+import StartQuiz from "./StartQuiz";
+import QuizPage from "./QuizPage";
+import QuizResult from "./QuizResult";
 
 /** react routes */
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
+    element: <QuizList></QuizList>,
   },
   {
-    path: "/quiz",
-    element: (
-      <UserAuth>
-        <Quiz />
-      </UserAuth>
-    ),
+    path: "/start/:id",
+    element: <StartQuiz></StartQuiz>
   },
   {
-    path: "/result",
+    path: "/quiz/:id",
+    element: <QuizPage></QuizPage>
+  },
+  {
+    path: "/quiz/:id/result",
+    element: <QuizResult></QuizResult>,
+  },
+  {
+    path: "/admin",
     element: (
-      <UserAuth>
-        <Result />,
-      </UserAuth>
+        <AdminPage />
     ),
   },
 ]);
