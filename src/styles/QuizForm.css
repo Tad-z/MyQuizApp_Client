@@ -58,10 +58,10 @@ body {
 .select,
 textarea {
   border: 1px solid var(--border);
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.5rem;
   border-radius: var(--radius);
   font-size: 1rem;
-  width: 100%;
+  width: 95%;
   transition: var(--transition);
   background-color: var(--card-bg);
 }
@@ -142,6 +142,7 @@ textarea {
 /* File upload section */
 input[type="file"] {
   padding: 2rem;
+  width: 90%;
   border: 2px dashed var(--primary-light);
   border-radius: var(--radius);
   background-color: rgba(67, 97, 238, 0.03);
@@ -349,14 +350,6 @@ input[type="file"]:hover {
   padding: 2.5rem 1rem;
 }
 
-.admin-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: var(--text);
-  border-bottom: 2px solid var(--primary-light);
-  padding-bottom: 0.5rem;
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
