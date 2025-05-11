@@ -10,7 +10,7 @@ const QuizList = () => {
   useEffect(() => {
     const fetchQuizzes = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/quiz");
+        const res = await axios.get("https://https-quiz-app-server-onrender-com.onrender.com/quiz");
         const data = res.data
         const quiz = data.quizzes
         setQuizzes(quiz);

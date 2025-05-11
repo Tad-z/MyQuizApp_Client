@@ -12,7 +12,7 @@ const StartQuiz = () => {
     useEffect(() => {
         const fetchQuiz = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/quiz/get/${id}`);
+                const res = await axios.get(`https://https-quiz-app-server-onrender-com.onrender.com/quiz/get/${id}`);
                 const data = res.data
                 const quiz = data.quiz
                 setQuiz(quiz);
@@ -27,7 +27,7 @@ const StartQuiz = () => {
         if (!user.name || !user.email) return alert("Please fill all fields");
 
         try {
-            const res = await axios.post("http://localhost:5000/user/start", user);
+            const res = await axios.post("https://https-quiz-app-server-onrender-com.onrender.com/user/start", user);
             const { userId } = res.data;
 
             navigate(`/quiz/${id}`, {

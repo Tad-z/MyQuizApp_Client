@@ -67,7 +67,7 @@ const QuizCreator = () => {
     
     try {
       // Call your new endpoint
-      const res = await axios.post("http://localhost:8000/upload/quiz", formData, {
+      const res = await axios.post("https://bulk-upload-quiz.onrender.com/upload/quiz", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       
@@ -129,7 +129,7 @@ const QuizCreator = () => {
 
     try {
       console.log("Payload:", payload);
-      const res = await axios.post("http://localhost:5000/quiz/create", payload);
+      const res = await axios.post("https://https-quiz-app-server-onrender-com.onrender.com/quiz/create", payload);
       alert("Quiz created!");
       console.log(res.data);
     } catch (err) {

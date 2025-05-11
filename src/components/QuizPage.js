@@ -16,7 +16,7 @@ const QuizPage = () => {
   useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/quiz/get/${id}`);
+        const res = await axios.get(`https://https-quiz-app-server-onrender-com.onrender.com/quiz/get/${id}`);
         setQuiz(res.data.quiz);
         setAnswers(new Array(res.data.quiz.questions.length).fill(-1));
       } catch (err) {
@@ -34,7 +34,7 @@ const QuizPage = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post(`http://localhost:5000/quiz/${id}/submit/`, {
+      const res = await axios.post(`https://https-quiz-app-server-onrender-com.onrender.com/quiz/${id}/submit/`, {
         userId: user.id,
         answers,
       });
